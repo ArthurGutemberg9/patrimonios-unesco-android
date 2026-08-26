@@ -1,39 +1,45 @@
 # Patrimônios UNESCO
 
-O Patrimônios UNESCO é um aplicativo Android criado para apresentar, de forma simples e visual, lugares históricos, culturais e naturais reconhecidos pela UNESCO. A ideia é transformar a pesquisa sobre patrimônio mundial em uma experiência de descoberta: a pessoa entra, explora os locais, consulta informações básicas e pode salvar os destinos que mais despertarem interesse.
+O **Patrimônios UNESCO** é um aplicativo Android criado para ajudar a conhecer lugares históricos, culturais e naturais reconhecidos pela UNESCO.
 
-A proposta foi pensada para unir tecnologia e educação patrimonial. Em vez de ser apenas uma lista, o aplicativo organiza cada local por país, categoria, ano de reconhecimento e uma breve descrição. Assim, o usuário consegue conhecer diferentes histórias e perceber por que esses espaços precisam ser preservados.
+A proposta é simples: entrar, explorar o catálogo, pesquisar por nome ou categoria e salvar os patrimônios favoritos. Cada local apresenta uma imagem, país, tipo, ano de reconhecimento e uma breve descrição.
 
-## Funcionalidades
+## Telas do aplicativo
 
-A aplicação possui telas de cadastro e login usando Firebase Authentication. Depois de entrar, o usuário encontra um catálogo com busca por nome, país ou categoria, cards com imagens dos locais, uma tela de detalhes e uma área de favoritos. O catálogo é lido do Cloud Firestore e conta com dados demonstrativos para que a navegação continue funcionando durante a configuração inicial do projeto Firebase.
+### Login
+
+![Tela de login](assets/tela-login.png)
+
+### Catálogo
+
+![Catálogo de patrimônios](assets/tela-catalogo.png)
+
+### Detalhes e favoritos
+
+![Detalhes do patrimônio](assets/tela-detalhes.png)
 
 ## Tecnologias
 
-O projeto foi desenvolvido como um aplicativo Android nativo em Kotlin. A interface foi construída integralmente com Jetpack Compose e Material 3. A navegação utiliza Navigation Compose, as imagens são carregadas com Coil e a camada de dados utiliza Firebase Authentication e Cloud Firestore.
-
-| Camada | Tecnologia |
-| --- | --- |
-| Linguagem | Kotlin |
-| Interface | Jetpack Compose + Material 3 |
-| Autenticação | Firebase Authentication |
-| Backend | Cloud Firestore |
-| Navegação | Navigation Compose |
-| Imagens | Coil |
-| IDE recomendada | Android Studio Ladybug ou superior |
+O projeto foi desenvolvido como um aplicativo Android nativo em **Kotlin**, com a interface feita integralmente em **Jetpack Compose** e Material 3. A autenticação usa Firebase Authentication e os dados do catálogo ficam preparados para o Cloud Firestore.
 
 ## Como executar
 
-Abra a pasta do projeto no Android Studio e aguarde a sincronização do Gradle. No console do Firebase, crie um projeto, registre um aplicativo Android com o identificador `com.arthur.patrimoniosunesco` e faça o download do arquivo `google-services.json`. Coloque esse arquivo dentro da pasta `app/` do projeto.
+Abra o projeto no Android Studio. Para ativar o Firebase, crie um projeto no Firebase, registre o aplicativo com o identificador `com.arthur.patrimoniosunesco`, ative o login por e-mail e senha, baixe o arquivo `google-services.json` e coloque-o dentro da pasta `app/`.
 
-No Firebase Authentication, ative o provedor de e-mail e senha. Em seguida, crie o Cloud Firestore em modo de teste durante o desenvolvimento. Para utilizar dados próprios, crie uma coleção chamada `sites`; cada documento pode conter os campos `name`, `country`, `category`, `year`, `description` e `imageUrl`.
+Depois, sincronize o Gradle e execute o aplicativo em um emulador ou dispositivo Android.
 
-Depois disso, basta executar o aplicativo em um emulador ou dispositivo Android com Android 8.0 ou superior. O arquivo `google-services.json` não deve ser publicado caso contenha configurações específicas do projeto; por isso, ele deve ser adicionado localmente pelo responsável pelo Firebase.
+## Autor
 
-## Organização do projeto
+Arthur Gutemberg Costa
 
-A tela principal está em `MainActivity.kt`, reunindo o fluxo de autenticação, catálogo, favoritos e detalhes. A identidade visual está separada em `ui/theme`, enquanto as configurações de compilação ficam no módulo `app`.
+[Repositório no GitHub](https://github.com/ArthurGutemberg9/patrimonios-unesco-android)
 
-## Objetivo acadêmico
+[Documentação do Jetpack Compose](https://developer.android.com/jetpack/compose)
 
-Este projeto atende à proposta de criar uma aplicação Android desde o início, usando uma interface moderna com Jetpack Compose, autenticação em um serviço real e comunicação com um backend para disponibilizar os dados do catálogo. O tema Patrimônios UNESCO foi escolhido por permitir uma aplicação útil, visual e relacionada à valorização da memória cultural e natural do mundo.
+[Documentação do Firebase Authentication](https://firebase.google.com/docs/auth)
+
+[Documentação do Cloud Firestore](https://firebase.google.com/docs/firestore)
+
+[UNESCO World Heritage](https://whc.unesco.org/)
+
+> As imagens deste README são mockups visuais das telas propostas para o aplicativo. Os arquivos do projeto continuam disponíveis na pasta `app/`.
